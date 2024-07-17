@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import { projects } from "../../data/constants";
 import ProjectCard from "../cards/ProjectCard";
+import { ToggleButton } from "@mui/material";
 
 const Container = styled.div`
 margin-top: 100px;
@@ -95,6 +96,7 @@ const CardContainer = styled.div`
 
 const Projects = ({ openModal, setOpenModal }) => {
   const [toggle, setToggle] = useState("all");
+
   return (
     <Container id="Projects">
       <Wrapper>
@@ -108,6 +110,12 @@ const Projects = ({ openModal, setOpenModal }) => {
           apps. Here are some of my projects. */}
           Here is my project.
         </Desc>
+        <ToggleButton
+            active={toggle === "all"}
+            onClick={() => setToggle("all")}
+          >
+            ALL
+          </ToggleButton>
         {/* <ToggleButtonGroup>
           <ToggleButton
             active={toggle === "all"}
